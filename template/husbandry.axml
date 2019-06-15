@@ -1,0 +1,33 @@
+<template name="husbandry">
+  <view class='husbandry bg'>
+    <view class='item clearfix' a:if="{{husbandryData.husbandry.length>0}}" a:for="{{husbandryData.husbandry}}" a:key="{{index}}">
+      <view class='name'>{{item.type_name}}</view>
+      <view class='info'>
+        <image src="{{item.fimg_url||'/resources/images/default.png'}}" lazy-load='true' />
+        <view class='data'>
+          <view>
+            <text>作业时间：</text>{{item.stimeStr}} </view>
+          <view>
+            <text>负责人：</text> {{item.owner}}</view>
+          <view>
+            <text>作业类型：</text>{{item.type_name}}</view>
+          <view>
+            <text a:if="{{item.type=='C'}}">种植品种：</text>
+            <text a:if="{{item.type=='B'}}">施肥种类：</text>
+            <text a:if="{{item.type=='A'}}">植保种类：</text>
+            <block a:if="{{item.varieties}}"> {{item.varieties}} </block><block a:if="{{item.classify}}">-{{item.classify}}</block>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='nodate' a:if="{{husbandryData.husbandry.length==0}}">
+      <text>暂无农事活动</text>
+    </view>
+
+    <!--   <view class='shadow'></view> -->
+  </view>
+  <view class='nomore'>
+    <block a:if="{{isLoading&&husbandryData.husbandry.length>0}}">加载中...</block>
+    <block a:if="{{!isLoading}}"> ———— 没有更多数据  ————</block>
+  </view>
+</template>

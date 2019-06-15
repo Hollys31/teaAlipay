@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="scan">
+<text class='toFeedback' onTap='toFeedback'>异常反馈</text>
+  <view class='scan-code clearfix' onTap='handelScanCode'>
+    <icon  iconClass="icon icon-scan"></icon>
+    溯源扫码
+  </view>
+  <view class='slogan'>
+    安全新理念，追溯看得见
+    <text>初心·茶道·纯正</text>
+  </view>
+</view>
+ <image class='img' src='/resources/images/start.png'/>
+ <my-loading a:if="{{loading}}"> </my-loading>

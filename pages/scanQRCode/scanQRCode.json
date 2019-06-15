@@ -1,0 +1,7 @@
+{
+  "transparentTitle": "auto",
+  "usingComponents": {
+    "icon": "../../components/icon/icon",
+    "my-loading": "../../components/loading/loading"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "defaultTitle": "视频",
+  "pullRefresh": true,
+  "usingComponents": {
+  "icon": "../../components/icon/icon",
+  "tabbar": "../../components/tabbarBottom/tabbarBottom",
+  "my-loading": "../../components/loading/loading"
+}
+}

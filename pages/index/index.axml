@@ -1,0 +1,69 @@
+<!--pages/index/index.wxml-->
+<view class="index {{modalHidden?'noscroll':''}}">
+  <view class='banner'>
+    <image  src='/resources/images/identifybg.png' />
+    <view class='count'>{{traceabilityData.total}}次</view>
+    <view class='charge clearfix'>
+      <view class='unusual' a:if="{{traceabilityData.total>6}}" onTap='openModal'>异常反馈</view>
+      <view class="scan {{traceabilityData.total>6?'':'single'}}" onTap='handelScanCode'>再次扫码</view>
+    </view>
+    <text a:if="{{traceabilityData.total>6}}">此二维码出现异常，请查询该码的真实性</text>
+  </view>
+  <view class='container identify'>
+    <view class='title'>
+      <view a:for="{{infoTypeData}}" a:key="{{index}}" data-type="{{item.type}}" class="item {{type==item.type?'active':''}}" onTap='handelInfoType'>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+    <swiper class="page-swiper" current="{{type}}" duration="300" onChange="switchTabPage" style="height:{{height}}px;">
+      <swiper-item a:for="{{[0,1,2]}}" a:for-index="idx" a:key="idx" class="tab-content">
+        <scroll-view scroll-y="true" id="getheight{{idx}}">
+          <block a:if="{{type==0}}">
+            <import src="/template/traceability" />
+            <template is="traceability" data="{{ weatherData,traceabilityData,allTraceabilitys,nomore}}"></template>
+          </block>
+          <block a:if="{{type==1}}">
+            <import src="/template/technology" />
+            <template is="technology" data="{{technologyData}}"></template>
+          </block>
+          <block a:if="{{type==2}}">
+            <import src="/template/husbandry" />
+            <template is="husbandry" data="{{isLoading,husbandryData}}"></template>
+          </block>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 异常提醒 -->
+  <view class='warn-modal' a:if="{{modalHidden}}" catchtouchmove="ture">
+    <view class='modal-inner'>
+      <image src='/resources/images/warnbg.png' catchtouchmove="ture" />
+      <form onSubmit='saveFeedback' report-submit="{{true}}">
+        <view class='form-inner clearfix'>
+          <view class="section {{nameEmpty==0?'active':''}}">
+            <view class="section__title">姓名：</view>
+            <input name="name" enableNative="{{false}}" value='{{name}}' data-name="nameEmpty" onFocus='handelInputFocus' onBlur='handelInputBlur' />
+          </view>
+          <view class="section {{phoneEmpty==0?'active':''}}">
+            <view class="section__title">电话：</view>
+            <input enableNative="{{false}}" name="phone" value='{{phone}}' data-name="phoneEmpty" onFocus='handelInputFocus' onBlur='handelInputBlur' />
+          </view>
+          <view class="advice {{contextEmpty==0?'active':''}}">
+            <view class="label">反馈内容：</view>
+            <view onTap='handelviewFocus' class="adviceview {{isFocus?'hide':''}}">
+              <text a:if="{{advice.length==0}}">请输入您需要反馈的问题..... </text>
+              <text a:if="{{advice.length>0}}">{{advice}}</text>
+            </view>
+            <textarea enableNative="{{false}}" class="adviceInput {{isFocus?'show':''}}" name="advice" data-name="contextEmpty" value='{{advice}}' auto-focus='{{isFocus}}' focus="{{isFocus}}" placeholder-style="color:#ccc;" onFocus='handelInputFocus' onBlur='handelInputBlur' />
+          </view>
+        </view>
+        <view class='topage'>
+          <text onTap='toFeedback'>查看历史反馈</text>
+        </view>
+        <button class='submit' form-type='submit' >提交</button>
+      </form>
+    </view>
+     <text  onTap='closeModal'><icon  iconClass="close icon-close"></icon></text>
+  </view>
+</view>
+<my-loading a:if="{{loading}}"></my-loading>

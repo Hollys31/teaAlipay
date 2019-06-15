@@ -1,0 +1,9 @@
+<!--pages/start/start.wxml-->
+<view class="monster">
+	<view class="eye">
+		<view class="eyeball"></view>
+	</view>
+	<view class="mouth"></view>
+</view>
+
+

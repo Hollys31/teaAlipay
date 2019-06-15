@@ -1,0 +1,113 @@
+.environment {
+  padding-top: 24rpx;
+  padding-bottom: 6rpx;
+}
+.f2-canvas{
+  z-index: 99
+}
+.environment .item {
+  width: 710rpx;
+  height: 474rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: #fff;
+  margin: 0 20rpx 24rpx;
+  border-radius: 20rpx;
+   position: relative;
+}
+.environment .chart{
+  margin-top: 68rpx;
+  width: 710rpx;
+  height: 380rpx;
+
+}
+.environment .chart canvas {
+ width: 100%;
+ height: auto;
+  display: block
+}
+
+.environment .title{
+  width: 680rpx;
+  height: 80rpx;
+  padding: 15rpx 0;
+  padding-bottom: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0
+}
+.environment .left, .environment .center {
+  float: left;
+}
+
+.environment .left {
+  width: 230rpx;
+}
+
+.environment .left image {
+  width: 49rpx;
+  height: 49rpx;
+  float: left;
+  margin-top: 10rpx;
+  margin-right: 6rpx;
+}
+.environment .left>view>text{
+  display: block
+}
+
+.environment .center {
+  width: 230rpx;
+  padding-top: 20rpx;
+  color: #0aa666;
+  font-weight: bold;
+  font-size: 34rpx;
+  text-align: left;
+}
+
+.environment .right {
+  width: 200rpx;
+  float: right;
+  text-align: right;
+  font-size: 32rpx
+}
+.environment .right .tips{
+  font-size: 26rpx;
+  color: #999;
+  height: 30rpx;
+  
+}
+.environment  .tips text{
+  font-size: 30rpx;
+  color: #0aa666;
+}
+
+.environment .unit{
+  font-size: 22rpx;
+  padding-left: 20rpx;
+}
+.PHitem .center{
+ color: #29bec0
+}
+.winditem .center{
+  color: #004b7f
+}
+.Beamitem .center{
+  color: #ff8708;
+}
+.air .center{
+   padding-top: 0;
+   font-size: 30rpx;
+}
+.air .lates{
+  color: #ff9c00
+}
+.airHMitem .center{
+   padding-top: 0;
+   font-size: 30rpx;
+}
+.airHMitem .lates{
+  color: #00751e
+}

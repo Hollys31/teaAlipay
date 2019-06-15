@@ -1,0 +1,132 @@
+<!--index.wxml-->
+<view class="environment">
+  <!--风向风速 -->
+  <view class='item winditem'>
+    <view class='clearfix title'>
+      <view class='left'>
+        <image src='/resources/images/chart3.png' />
+        <view>
+          生长环境：
+          <text>风速统计表(月)</text>
+        </view>
+      </view>
+      <view class='center'>
+        {{latesWirect}}
+        <text a:if="{{latesWspeed<=5.4}}">微风</text>
+        <text a:if="{{5.4<latesWspeed&&latesWspeed<=7.9}}">和风</text>
+        <text a:if="{{7.9<latesWspeed&&latesWspeed<=10.7}}">劲风</text>
+        <text a:if="{{10.7<latesWspeed&&latesWspeed<=13.8}}">强风</text>
+        <text a:if="{{13.8<latesWspeed}}">大风</text>
+      </view>
+      <view class='right'>
+        风向风速
+        <view class='tips'>单位:m/s</view>
+
+      </view>
+    </view>
+    <canvas class='chart' id="wind" width="710rpx" height="380rpx" disable-scroll=true onTouchStart="touchStart" onTouchMove="touchMove" onTouchEnd="touchEnd"></canvas>
+  </view>
+  <!-- 空气湿度 -->
+  <view class='item airHMitem'>
+    <view class='clearfix title'>
+      <view class='left'>
+        <image src='/resources/images/chart4.png' />
+        <view>
+          生长环境湿度：
+          <text>湿度统计表(月)</text>
+        </view>
+      </view>
+      <view class='center'>
+        <view class='lates'>空气 {{latesHumid}}%</view>
+        <view>土壤  {{latesSoilmture}}%</view>
+      </view>
+      <view class='right'>
+        空气土壤湿度
+        <view class='tips'>单位:%</view>
+      </view>
+    </view>
+    <canvas class='chart' id="airHM" width="710rpx" height="380rpx" opts=""  disable-scroll=true onTouchStart="touchStart" onTouchMove="touchMove" onTouchEnd="touchEnd"></canvas>
+  </view>
+  <!--  空气温度 -->
+  <view class='item PHitem air'>
+    <view class='clearfix title'>
+      <view class='left'>
+        <image src='/resources/images/chart6.png' />
+        <view>
+          生长环境温度：
+          <text>温度度统计表(月)</text>
+        </view>
+      </view>
+      <view class='center'>
+       <view class='lates'>空气 {{latestTemp}} ℃</view>
+       <view>土壤  {{latesSoiltemp}} ℃</view>
+      </view>
+      <view class='right'>
+        空气土壤温度
+        <view class='tips'>单位:℃</view>
+      </view>
+    </view>
+    <canvas class='chart' id="airTemp"  width="710rpx" height="380rpx" disable-scroll=true onTouchStart="touchStart" onTouchMove="touchMove" onTouchEnd="touchEnd"></canvas>
+  </view>
+  <!-- 光照 -->
+  <view class='item Beamitem'>
+    <view class='clearfix title'>
+      <view class='left'>
+        <image src='/resources/images/chart7.png' />
+        <view>
+          生长光照环境：
+          <text>光照统计表(月)</text>
+        </view>
+      </view>
+      <view class='center'>
+        {{latesSunlux}}H
+      </view>
+      <view class='right'>
+        光照环境
+        <view class='tips'>单位:H</view>
+      </view>
+    </view>
+    <canvas class='chart' id="beam"  width="710rpx" height="380rpx" disable-scroll=true onTouchStart="touchStart" onTouchMove="touchMove" onTouchEnd="touchEnd"></canvas>
+  </view>
+  <!-- 降雨量 -->
+    <view class='item PHitem'>
+    <view class='clearfix title'>
+      <view class='left'>
+        <image src='/resources/images/chart5.png' />
+        <view>
+          生长降雨环境：
+          <text>降雨统计表(月)</text>
+        </view>
+      </view>
+      <view class='center'>
+        {{latesRain}} mm
+      </view>
+      <view class='right'>
+        降雨量
+        <view class='tips'>单位：mm</view>
+      </view>
+    </view>
+    <canvas class='chart' id="rain" width="710rpx" height="380rpx" disable-scroll=true onTouchStart="touchStart" onTouchMove="touchMove" onTouchEnd="touchEnd"></canvas>
+  </view>
+  <!-- 气压环境 -->
+  <view class='item'>
+    <view class='clearfix title'>
+      <view class='left'>
+        <image src='/resources/images/chart8.png' />
+        <view>
+          生长气压环境：
+          <text>气压统计表(月)</text>
+        </view>
+      </view>
+      <view class='center'>
+        {{latesPa}}Pa
+      </view>
+      <view class='right'>
+        气压环境
+        <view class='tips'>单位:Pa</view>
+      </view>
+    </view>
+    <canvas class='chart' id="pressure" width="710rpx" height="380rpx"  disable-scroll=true onTouchStart="touchStart" onTouchMove="touchMove" onTouchEnd="touchEnd"></canvas>
+  </view>
+</view>
+<my-loading a:if="{{loading}}"></my-loading>

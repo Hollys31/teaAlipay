@@ -1,0 +1,123 @@
+/* components/loading/loading.wxss */
+
+.loading {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 5em;
+  height: 5em;
+  overflow: hidden;
+  -webkit-animation: rotate 1.4s linear infinite;
+  -moz-animation: rotate 1.4s linear infinite;
+  -o-animation: rotate 1.4s linear infinite;
+  animation: rotate 1.4s linear infinite;
+  z-index: 100001;
+}
+
+.loading .white {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  opacity: 0;
+  border-radius: 100%;
+  z-index: 99;
+}
+
+.loading .dot {
+  position: absolute;
+  margin: auto;
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 100%;
+  -moz-border-radius: 100%;
+  -webkit-transition: all 1.4s ease;
+  -moz-transition: all 1.4s ease;
+  -o-transition: all 1.4s ease;
+  transition: all 1.4s ease;
+}
+
+.loading .dot:nth-child(2) {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: #ec6358;
+  border-radius: 100%;
+
+}
+
+.loading .dot:nth-child(3) {
+  left: 0;
+  right: 0;
+  top: 0;
+  background: #FFBB33 ;
+  border-radius: 100%;
+}
+
+.loading .dot:nth-child(4) {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #0aa666;
+  border-radius: 100%;
+}
+
+.loading .dot:nth-child(5) {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #519ee2;
+  border-radius: 100%;
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+  }
+  10% {
+    width: 5em;
+    height: 5em;
+  }
+  20% {
+    width: 1.4em;
+    height: 1.4em;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+    width: 5em;
+    height: 5em;
+  }
+}
+
+@keyframes dotsY {
+  66% {
+    opacity: 0.1;
+    width: 1.4em;
+  }
+  77% {
+    opacity: 1;
+    width: 0;
+  }
+}
+
+@keyframes dotsX {
+  66% {
+    opacity: 0.1;
+
+  }
+  77% {
+    opacity: 1;
+    height: 0;
+  }
+}
+

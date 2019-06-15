@@ -1,0 +1,14 @@
+<!--pages/video/video.wxml-->
+<view class='video container'>
+  <!--   全景视频 -->
+  <block a:if="{{panoNum!=0}}">
+    <web-view src="{{panoUrl}}">
+    </web-view>
+  </block>
+  <block a:if="{{panoNum==0}}">
+    <view class='nodate'>
+      <image src='/resources/images/nodata.png' />
+      <text>暂无全景视频            
+      </text>
+    </view>
+  </block>

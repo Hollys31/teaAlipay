@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/scanQRCode/scanQRCode",
+    "pages/index/index",
+    "pages/environmentChart/index",
+    "pages/feedback/feedback",
+    "pages/video/video",
+    "pages/teaPlantation/teaPlantation",
+    "pages/start/start"
+  ],
+  "window": {
+    "defaultTitle": "",
+    "transparentTitle":"none"
+  },
+  "tabBar": {
+    "textColor": "#494949",
+    "selectedColor": "#0aa666",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "#fcfcfc",
+    "items": [
+      {
+        "activeIcon": "/resources/images/identify1.png",
+        "icon": "/resources/images/identify.png",
+        "pagePath": "pages/index/index",
+        "name": "认证"
+      },
+      {
+        "activeIcon": "/resources/images/tea1.png",
+        "icon": "/resources/images/tea.png",
+        "pagePath": "pages/teaPlantation/teaPlantation",
+        "name": "茶园"
+      },
+      {
+        "activeIcon": "/resources/images/camera1.png",
+        "icon": "/resources/images/camera.png",
+        "pagePath": "pages/video/video",
+        "name": "全景"
+      },
+      {
+        "activeIcon": "/resources/images/weather1.png",
+        "icon": "/resources/images/weather.png",
+        "pagePath": "pages/environmentChart/index",
+        "name": "环境"
+      }
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+<!--pages/network/network.wxml-->
+<view class='netWork'>
+<image src="/resources/images/netErr.png"/>
+<text>网络出问题了 请检查网络</text>
+</view>

@@ -1,0 +1,664 @@
+/* pages/index/index.wxss */
+page{
+  height: 100%;
+  overflow-y: scroll
+}
+
+.index{
+ 
+}
+.noscroll{
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0
+}
+.identify .bg {
+  background: #fff;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  position: relative;
+  font-size: 26rpx;
+  overflow: hidden;
+  padding: 0 20rpx;
+
+}
+
+.banner, .banner image {
+  width: 750rpx;
+  height: 348rpx;
+  color: #fff;
+}
+
+.banner {
+  position: relative;
+  text-align: center;
+  padding-top: 16rpx;
+  font-size: 24rpx;
+}
+
+.banner image {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+.banner>view{
+  position: relative;
+  z-index: 99
+}
+.banner .count {
+  width: 162rpx;
+  height: 162rpx;
+  line-height: 162rpx;
+  background: #00a666;
+  border-radius: 50%;
+  font-size: 48rpx;
+  border: 16rpx solid #ceffe9;
+  opacity: 0.8;
+  margin: 0 auto;
+}
+
+.banner .charge {
+  margin: 20rpx 0 15rpx;
+}
+
+.banner .charge>view {
+  width: 194rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  float: left;
+  border-radius: 32px;
+  background: #e0e0e0;
+}
+
+.banner .charge .unusual {
+  margin-left: 167rpx;
+  margin-right: 15rpx;
+}
+
+.banner .charge .scan {
+  background: #00a666;
+}
+.banner .charge .scan.single{
+  margin-left: 276rpx;
+}
+
+.identify {
+  margin: 10rpx auto 30rpx;
+}
+
+.title {
+  background: #fff;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  height: 120rpx;
+  line-height: 130rpx;
+  font-size: 28rpx;
+  color: #494949;
+  display: flex;
+}
+
+.title>.item {
+  flex: 1;
+  text-align: center;
+}
+
+.title>.item.active text {
+  padding-bottom: 10rpx;
+  color: #0aa666;
+  border-bottom: 4rpx solid #0aa666;
+}
+
+.traceability.bg {
+  padding-top: 25rpx;
+  height:auto;
+  overflow-y: scroll;
+  width: 710rpx;
+  margin-bottom: 24rpx;
+}
+
+.traceability .item {
+  height: 120rpx;
+  overflow: hidden;
+  position: relative;
+}
+.traceability .item.active{
+  height: 150rpx;
+}
+.traceability .item.active .line{
+  height: 150rpx;
+}
+.look-more{
+  width: 110rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-radius: 8rpx;
+  text-align: center;color: #fff;
+  background: #00a666;
+  font-size: 22rpx;
+}
+.traceability .item>view {
+  float: left;
+}
+
+.traceability .item .time {
+  width: 150rpx;
+  height: 120rpx;
+  padding: 0 20rpx;
+  margin-right: 20rpx;
+  overflow: hidden;
+  text-align: center
+}
+.traceability .item:first-child .time{
+ height: 150rpx;
+}
+.traceability .item .time:after {
+  width: 14rpx;
+  height: 14rpx;
+  padding: 0;
+  overflow: hidden;
+  position: absolute;
+  background: #9d9d9d;
+  border-radius: 100%;
+  top: 32rpx;
+  left: 209rpx;
+  content: "";
+  z-index: 99;
+}
+
+.traceability .item .line {
+  width: 1rpx;
+  height: 120rpx;
+  background: #8c8c8c;
+  position: absolute;
+  left: 214.6rpx;
+}
+
+.traceability .item:first-child {
+  color: #0aa666;
+  height: 150rpx;
+}
+
+
+.traceability .item:first-child .line {
+  margin-top: 40rpx;
+}
+
+.traceability .item:first-child .time:after {
+  background: #0aa666;
+}
+
+.traceability .item:last-child .line {
+  height: 40rpx;
+}
+
+.traceability .item .info {
+  padding-left: 68rpx;
+  width: 400rpx;
+}
+
+.traceability .item .info  text {
+  display: block;
+}
+
+.goods {
+  margin: 24rpx 0;
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 35rpx;
+}
+
+.goods>image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 20rpx;
+  float: left;
+}
+
+.goods .info {
+  font-size: 26rpx;
+  width: 445rpx;
+  float: left;
+  margin-left: 30rpx;
+}
+
+.goods .info .item {
+  height: 50rpx;
+  line-height: 50rpx;
+  display: flex;
+}
+
+.goods .info .odd {
+  color: #cf3e34;
+}
+
+.goods .info .item text {
+  flex: 1;
+  text-align: center;
+}
+
+.goods .info .descript {
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 制茶工艺 */
+
+.technology {
+  font-size: 24rpx;
+}
+
+.technology .step {
+  display: flex;
+  margin: 15rpx auto 35rpx;
+}
+
+.technology .step .item {
+  flex: 1;
+  font-size: 24rpx;
+  color: #666;
+  line-height: 1.8em;
+  position: relative;
+  text-align: center;
+}
+
+.technology .step .item.active {
+  color: #0aa666;
+}
+
+.technology .step .item text {
+  display: block;
+  width: 45rpx;
+  line-height: 45rpx;
+  background: #b3e6d1;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  margin-left: 24rpx;
+}
+
+.technology .step .item.active text {
+  background: #0aa666;
+}
+
+.technology .step .item>view:before {
+  width: 40rpx;
+  overflow: hidden;
+  content: "———";
+  position: absolute;
+  left: 74rpx;
+  color: #999;
+}
+
+.technology .step .item:last-child>view::before {
+  content: '';
+}
+
+.technology  swiper {
+  margin: 30rpx auto;
+}
+
+.technology  swiper, .technology swiper image {
+  width: 681rpx;
+  height: 389rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.technology .info {
+  padding: 0 20rpx 30rpx;
+  height: 100rpx;
+}
+
+.technology .info .item {
+  display: flex;
+  height: 56rpx;
+  line-height: 56rpx;
+  clear: both;
+  overflow: hidden;
+}
+
+.technology .info .item>view {
+  flex: 1;
+}
+
+.technology .info .item text {
+  display: block;
+  width: 140rpx;
+  float: left;
+}
+.technology .info .item>view:nth-child(2n){
+position: relative;
+text-align: right
+}
+.technology .info .item>view:nth-child(2n) text{
+position: absolute;
+right: 85rpx;
+text-align: right;
+}
+.technologySwiper{
+  transform:translate3d(0,0,0);overflow:hidden;
+}
+.technologySwiper .swiper-item{
+  transform:translate3d(0,0,0)
+}
+
+/* 农事活动 */
+
+.identify .husbandry {
+  padding: 0 20rpx;
+  margin-bottom: 15rpx;
+}
+
+.husbandry .item {
+  height: 230rpx;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1rpx solid #efefef;
+}
+.husbandry .item:last-child{
+  border: none;
+}
+.husbandry .name {
+  color: #0aa666;
+  width: 90rpx;
+  padding-left: 50rpx;
+  height: 230rpx;
+  line-height: 230rpx;
+  float: left;
+  font-size: 24rpx;
+}
+
+.husbandry .shadow {
+  height: 290rpx;
+}
+
+.husbandry image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 15rpx;
+  float: left;
+  margin-right: 40rpx;
+  background: #eee;
+}
+
+.husbandry .info {
+  float: left;
+  width: 488rpx;
+  padding: 33rpx 0;
+  line-height: 38rpx;
+}
+
+.husbandry .info .data {
+  width: 286rpx;
+  line-height: 40rpx;
+  float: left
+}
+
+.husbandry .info .data>view {
+  height: 40rpx;
+  overflow: hidden;
+}
+
+.husbandry .data text {
+  display: block;
+  width: 130rpx;
+  float: left;
+}
+
+.husbandry .nomore {
+  padding-top: 40rpx;
+}
+.husbandry .nodate{
+ width: 100%;
+ height: 600rpx
+}
+.husbandry .nodate image{
+  float: none;
+  width:458rpx;
+  height: 370rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 产地信息 */
+
+.origins.bg {
+  margin-top: 30rpx;
+  border-radius: 20rpx;
+  padding-top: 25rpx;
+}
+
+.origins .info image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 20rpx;
+  float: left;
+}
+
+.origins .info .data {
+  float: left;
+  width: 440rpx;
+  margin-left: 40rpx;
+}
+
+.origins .data .item {
+  height: 55rpx;
+  line-height: 55rpx;
+  float: left;
+  overflow: hidden;
+}
+
+.origins .data .item text {
+  display: block;
+  width: 160rpx;
+  float: left;
+}
+
+.origins .stitle {
+  font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 10rpx;
+  color: #222;
+}
+
+.origins .descript {
+  line-height: 1.6em;
+  padding-bottom: 30rpx;
+}
+
+.site {
+  border-radius: 20rpx;
+  margin-top: 24rpx;
+}
+
+.site .title {
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.site .item {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom: 1rpx solid #edf0ef;
+}
+
+.site .item image {
+  width: 36rpx;
+  height: 36rpx;
+  float: left;
+  margin-right: 6rpx;
+  margin-top: 15rpx;
+}
+
+.site .item:last-child {
+  border-bottom: none;
+}
+
+/* 模态框 */
+
+.warn-modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 998;
+}
+
+.warn-modal .modal-inner {
+  width: 600rpx;
+  height: 820rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -300rpx;
+  margin-top: -460rpx;
+  background: #f7f7f7;
+  z-index: 999;
+}
+
+.warn-modal .modal-inner image {
+  width: 600rpx;
+  height: 290rpx;
+  display: block;
+  margin: 0 auto;
+  background: #f7f7f7;
+}
+
+.warn-modal  .form-inner {
+  width: 467rpx;
+  margin: 0 auto;
+  font-size: 28rpx;
+  position: relative;
+  top: -25rpx;
+  background: #fff;
+  padding: 0 20rpx 35rpx;
+  border-bottom-left-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+  overflow: hidden;
+}
+
+.warn-modal .section {
+  float: left;
+  width: 100%;
+  height: 76rpx;
+  line-height: 76rpx;
+  border-bottom: 1rpx solid #e9e9e9;
+  clear: both
+}
+
+.warn-modal .section.active {
+  border-bottom: 1rpx solid #e74a50;
+}
+
+.warn-modal .section .section__title {
+  width: 84rpx;
+  float: left;
+}
+
+.warn-modal .section input {
+  width: 360rpx;
+  float: left;
+  height: 66rpx;
+  line-height: 66rpx;
+  box-sizing: content-box;
+}
+
+.warn-modal .advice {
+  float: left;
+}
+
+.warn-modal .advice .label {
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.warn-modal .adviceview{
+  padding: 13rpx;
+  background: #f7f7f7;
+  width: 448rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  border: 1rpx solid transparent;
+  color: #ccc
+}
+.warn-modal .adviceview.hide{
+  display: none;
+}
+.warn-modal .adviceInput{
+  display: none;
+}
+.warn-modal .adviceInput.show{
+  display: block
+}
+.warn-modal .advice textarea {
+  padding: 13rpx;
+  background: #f7f7f7;
+  width: 448rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  border: 1rpx solid transparent;
+}
+
+.warn-modal .advice.active .adviceview {
+  border: 1rpx solid #e74a50;
+}
+
+.warn-modal .submit {
+  width: 480rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  background-color: #0aa666;
+  border-radius: 39rpx;
+  margin: 0rpx 60rpx;
+  color: #fff;
+}
+
+.warn-modal .topage {
+  text-align: right;
+  clear: both;
+  padding-right: 50rpx;
+  height: 68rpx;
+  line-height: 48rpx;
+  margin-top: -23rpx;
+}
+
+.warn-modal .topage>text {
+  color: #999;
+}
+
+.warn-modal .close {
+  position: fixed;
+  width: 40rpx;
+  height: 40rpx;
+  color: #fff;
+  bottom: 120rpx;
+  font-size: 60rpx;
+  left: 50%;
+  margin-left: -20rpx;
+  display: block;
+  z-index: 1001;
+  color: #fff
+}
+
+.warn-modal .close text {
+  font-size: 60rpx;
+}

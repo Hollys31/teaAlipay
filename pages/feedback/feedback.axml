@@ -1,0 +1,32 @@
+<!--pages/feedback/feedback.wxml-->
+<view class='feedback' a:if="{{feedbackData.length>0}}">
+  <block  a:for="{{feedbackData}}" a:key="index">
+    <view class='item'>
+      <view class='title' data-index="{{index}}" onTap='slideToggle'>
+        {{index+1}}. {{item.odbk_title}}
+        <text class="date {{slideDownInd==index?'show':''}}">{{item.create_time}}</text>
+        <text a:if="{{item.odbk_status=='A'}}" class="{{slideDownInd==index?'':'show'}}">待处理</text>
+        <text a:if="{{item.odbk_status=='C'}}" class="{{slideDownInd==index?'':'show'}}">处理中</text>
+        <text a:if="{{item.odbk_status=='D'}}" class="finish {{slideDownInd==index?'':'show'}}">已完成</text>
+        <icon  iconClass="icon-more icon  {{slideDownInd==index?'down':''}}"></icon>
+      </view>
+      <view class='info' a:if="{{slideDownInd==index}}">
+        反馈内容：
+        <text>{{item.odbk_content}}</text>
+        <view class='result clearfix'>
+          处理结果:
+          <text a:if="{{item.odbk_status=='A'}}">待处理</text>
+          <text a:if="{{item.odbk_status=='C'}}">处理中</text>
+          <text a:if="{{item.odbk_status=='D'}}">已完成</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<block a:if="{{feedbackData.length==0}}">
+  <view class='nodate'>
+    <image src='/resources/images/nodata.png' />
+    <text>暂无问题反馈</text>
+  </view>
+</block>
+<my-loading a:if="{{loading}}"></my-loading>

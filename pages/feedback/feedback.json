@@ -1,0 +1,8 @@
+{
+  "defaultTitle": "问题反馈",
+  "pullRefresh": true,
+  "usingComponents": {
+    "icon": "../../components/icon/icon",
+    "my-loading": "../../components/loading/loading"
+  }
+}

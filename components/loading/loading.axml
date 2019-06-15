@@ -1,0 +1,10 @@
+<!--components/loading/loading.wxml-->
+
+<view class="loading">
+	<view class="dot white"></view>
+	<view class="dot"></view>
+	<view class="dot"></view>
+	<view class="dot"></view>
+	<view class="dot"></view>
+</view>
+

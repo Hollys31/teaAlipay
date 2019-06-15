@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "环境信息",
+  "usingComponents": {
+    "tabbar": "../../components/tabBar/tabBar",
+    "my-loading": "../../components/loading/loading"
+  }
+}

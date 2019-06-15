@@ -1,0 +1,43 @@
+<template name="technology">
+  <view class='technology bg'>
+    <view class='step'>
+      <view a:if="{{technologyData.craftVo.craftImgVos.length>0}}" a:for="{{technologyData.craftVo.craftImgVos}}" a:key="index" class="item {{item.craftimg_steps== technologyData.currStep?'active':''}}">
+        <view data-index="{{index}}" onTap='changeStep'>
+          <text>{{item.craftimg_steps}}</text>{{item.craftimg_stpname}}
+        </view>
+      </view>
+      <view a:if="{{technologyData.craftVo.craftImgVos.length==0}}" a:for="{{['采摘','萎凋','做青','杀青','揉捻','挑选','烘焙']}}" a:key="index" class="item {{(index+1)== technologyData.currStep?'active':''}}">
+        <view data-index="{{index}}" onTap='changeStep'>
+          <text>{{index+1}}</text>{{item}}
+        </view>
+      </view>
+    </view>
+    <swiper circular='true' class='technologySwiper' current="{{technologyData.currStep-1}}" onChange="changeStepImg">
+      <!-- autoplay='true' -->
+      <block a:for="{{technologyData.craftVo.craftImgVos}}" a:key="{{index}}">
+        <swiper-item>
+          <image src="{{item.craftimg_url||'/resources/images/default.png'}}" class="slide-image" />
+        </swiper-item>
+      </block>
+      <block a:if="{{technologyData.craftVo.craftImgVos.length==0}}" a:for="{{['采摘','萎凋','做青','杀青','揉捻','挑选','烘焙']}}" a:key="index">
+        <swiper-item>
+          <image src="/resources/images/default.png" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='info'>
+      <view class='item'>
+        <view>
+          <text>作业时间：</text> {{technologyData.craftVo.craft_stimeStr}}</view>
+        <view>
+          <text>作业类型：</text>{{technologyData.craftVo.craft_jtype}}</view>
+      </view>
+      <view class='item'>
+        <view>
+          <text>制茶等级：</text> {{technologyData.craftVo.craft_grade}}</view>
+        <view>
+          <text>负责人：</text>{{technologyData.craftVo.craft_owner}}</view>
+      </view>
+    </view>
+  </view>
+</template>

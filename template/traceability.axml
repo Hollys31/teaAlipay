@@ -1,0 +1,69 @@
+<template name="traceability">
+  <view class='traceability bg'>
+    <block a:for="{{allTraceabilitys}}" a:key="index">
+      <view class="item {{allTraceabilitys.length==(index+1)&&nomore=='no'?'active':''}}">
+        <view class='time'>{{item.orisech_timeStr}}</view>
+        <view class='line'></view>
+        <view class='info'>{{item.address}}
+          <text>{{item.sketch}}</text>  
+          <view class='look-more' onTap='getmoreTraceability' a:if="{{allTraceabilitys.length==(index+1)&&nomore=='no'}}">查看更多</view>
+        </view>
+      </view>
+    </block>
+    <block a:for="{{traceabilityData.originSearchVos}}" a:key="{{index}}">
+      <view class='item' a:if="{{index==0&&allTraceabilitys==0}}">
+        <view class='time'>{{item.orisech_timeStr}}</view>
+        <view class='line'></view>
+        <view class='info'>{{item.address}}
+          <text>{{item.sketch}}</text>
+          <view class='look-more'onTap='getmoreTraceability'>查看更多</view>
+        </view>
+      </view>
+      <view class='item' a:if="{{index>0}}">
+        <view class='time'>{{item.orisech_timeStr}}</view>
+        <view class='line'></view>
+        <view class='info'>{{item.address}}
+          <text>{{item.sketch}}</text>
+        </view>
+      </view>
+    </block>
+
+    <!--   <view class='shadow'></view> -->
+  </view>
+  <view class='goods clearfix'>
+    <image src='/resources/images/img.png' lazy-load='true' />
+    <view class='info'>
+      <view class='item'>
+        <text>商品名称</text>
+        <text>山场品质</text>
+        <text>工艺级别</text>
+      </view>
+      <view class='item odd'>
+        <text>{{traceabilityData.vo.qrcode_breed}}-{{traceabilityData.vo.qrcode_sbreed}}</text>
+        <text>{{traceabilityData.vo.plant_quality}}</text>
+        <text>{{traceabilityData.vo.qrcode_craftlevel}}</text>
+      </view>
+      <view class='descript'>{{traceabilityData.vo.garden_desc}}</view>
+    </view>
+  </view>
+   <view class='site bg'>
+    <view class='title'>产地环境</view>
+    <view class='item'>
+      <image src='/resources/images/site1.png' />
+      <block a:for="{{weatherData.area}}" a:key="index"> {{item.quality}}{{item.area}}亩</block>
+    </view>
+    <view class='item'>
+      <image src='/resources/images/site2.png' /> 年平均气温{{weatherData.weatherData.wdata_realtemp||0}}℃ 昼夜温差最大{{weatherData.weatherData.temp_diff||0}}℃
+    </view>
+    <view class='item'>
+      <image src='/resources/images/site3.png' /> 年光照时长{{weatherData.weatherData.flddata_sunlux||0}}hr 平均降雨量{{weatherData.weatherData.avg_rain||0}}mm
+    </view>
+    <view class='item'>
+      <image src='/resources/images/site4.png' /> 年平均湿度{{weatherData.weatherData.wdata_humidity||0}}%
+    </view>
+    <view class='item'>
+      <image src='/resources/images/site5.png' /> 气压{{weatherData.weatherData.flddata_pa||0}}pa
+    </view>
+  </view>
+</template>
+

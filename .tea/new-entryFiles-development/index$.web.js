@@ -1,0 +1,13 @@
+require('@alipay/appx-compiler/lib/sjsEnvInit.js');
+require('./config$.js');
+require('../../components/icon/icon.js');
+require('../../components/loading/loading.js');
+require('../../components/tabbarBottom/tabbarBottom.js');
+require('../../components/tabBar/tabBar.js');
+require('../../pages/scanQRCode/scanQRCode.js');
+require('../../pages/index/index.js');
+require('../../pages/environmentChart/index.js');
+require('../../pages/feedback/feedback.js');
+require('../../pages/video/video.js');
+require('../../pages/teaPlantation/teaPlantation.js');
+require('../../pages/start/start.js');

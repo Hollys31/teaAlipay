@@ -1,0 +1,64 @@
+<!--pages/ teaPlantation/ teaPlantation.wxml-->
+<view class='teaPlantation'>
+<view class='part nopadding garden'>
+  <image class='img' src="{{imgUrl}}" lazy-load='true' />
+  <image class='identifystate' src='/resources/images/identifystate.png' />
+  <view class='name'>{{teaData.basic.garden_name}}</view>
+  <view class='star'>
+    <block a:for="{{starNum}}"  a:key="index">
+      <icon iconClass="icon-star"></icon>
+    </block>
+  </view>
+  <view class='charge'>
+    <icon iconClass='icon-user' color="#0aa666"></icon> {{teaData.basic.user_name}}</view>
+  <view class='address'>
+    <icon iconClass='icon-address' color="#0aa666"></icon> {{teaData.basic.address_prov}}{{teaData.basic.address_city}}{{teaData.basic.address_town}}{{teaData.basic.address_village}}</view>
+</view>
+<view class='part'>
+  <view class='stit'>茶园简介</view>
+  {{teaData.basic.garden_desc}}
+</view>
+<!-- 当前 -->
+<view class='part'>
+  <view class='stit clearfix'>{{teaData.originPlot.plot_name}}
+    <view class='tips'>
+      <icon class='icon' iconClass="icon-ok"></icon>当前茶叶产地
+    </view>
+  </view>
+  <view class='sorts'>
+    <block a:for="{{teaData.originPlant}}" a:key="index">
+      <view class='item clearfix'>
+        <view class='sort-name'>
+          <icon iconClass="icon-leaf"></icon> <block a:if="{{item.varieties}}">{{item.varieties}}</block><block a:if="{{item.classify}}">-{{item.classify}}</block></view>
+        <view class='area'>占地{{item.count}}亩</view>
+      </view>
+    </block>
+    <!-- <view a:if="{{item.list.length>3}}"  class='more-sort'>查看更多品种
+      <icon class='icon' iconClass='icon-more'></icon>
+    </view> -->
+  </view>
+</view>
+<!-- 其他 -->
+<block a:for="{{teaData.otherPlant}}" a:key="index" a:for-item="items">
+  <view class='part'>
+    <view class='stit clearfix'>{{items.plot_name}} 
+      <view class='tips' a:if="{{plot_id==items.list[0].plot_id}}">
+       当前茶叶产地
+      </view>
+    </view>
+    <view class='sorts'>
+      <block a:for="{{items.list}}" a:key="index1" a:for-item="item">
+        <view class='item clearfix'>
+          <view class='sort-name'>
+            <icon iconClass="icon-leaf"></icon> <block a:if="{{item.varieties}}">{{item.varieties}}</block> <block a:if="{{item.classify}}">-{{item.classify}}</block></view>
+          <view class='area'>占地{{item.area}}亩</view>
+        </view>
+      </block>
+      <!-- <view a:if="{{items.list.length>3}}" class='more-sort'>查看更多品种
+        <icon class='icon' iconClass='icon-more'></icon>
+      </view> -->
+    </view>
+  </view>
+</block>
+</view>
+ <my-loading a:if="{{loading}}"></my-loading>
